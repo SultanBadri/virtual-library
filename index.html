@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <script
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Library</h2>
+      <div></div>
+      <div></div>
+      <!-- Add Book -->
+    </header>
+    <button id="new-book">+</button>
+
+    <div class="overlay"></div>
+    <div class="bookshelf"></div>
+
+    <section id="popup">
+      <div id="container">
+        <h1>New Book</h1>
+        <div class="close">+</div>
+        <form id="form" action="/" method="GET">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Book Title"
+            autocomplete="off"
+            required
+          /><br /><br />
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Author"
+            autocomplete="off"
+            required
+          /><br /><br />
+          <label for="pages">Number of pages:</label>
+          <input
+            type="number"
+            id="pages"
+            name="pages"
+            placeholder="Pages"
+            autocomplete="off"
+            required
+          /><br /><br />
+          <label for="read">Read the book?</label><br />
+          <select name="read" id="read">
+            <option value="Yes">Yes 😃</option>
+            <option value="No">No 😢</option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
