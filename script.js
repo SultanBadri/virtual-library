@@ -69,8 +69,6 @@ function addBook(i) {
   let trashNode = document.createElement("button");
   trashNode.classList = "trash";
   trashNode.innerHTML = `Delete <i class="fas fa-trash-alt">`;
-  //delete book
-  trashNode.addEventListener("click", removeBook);
 
   const book = new Book(title, author, pages, read);
   books.push(book);
@@ -96,6 +94,12 @@ function addBook(i) {
       book.read = "No";
       localStorage.setItem("books", JSON.stringify(books));
     }
+  });
+  //delete book
+  trashNode.addEventListener("click", () => {
+    bookshelf.removeChild(bookNode);
+    books.splice(bookNode, 1);
+    localStorage.setItem("books", JSON.stringify(books));
   });
 }
 
@@ -130,8 +134,6 @@ function getBooks() {
     let trashNode = document.createElement("button");
     trashNode.classList = "trash";
     trashNode.innerHTML = `Delete <i class="fas fa-trash-alt">`;
-    //delete book
-    trashNode.addEventListener("click", removeBook);
 
     bookNode.appendChild(titleNode);
     bookNode.appendChild(authorNode);
@@ -153,14 +155,13 @@ function getBooks() {
         localStorage.setItem("books", JSON.stringify(books));
       }
     });
+    //delete book
+    trashNode.addEventListener("click", () => {
+      bookshelf.removeChild(bookNode);
+      books.splice(bookNode, 1);
+      localStorage.setItem("books", JSON.stringify(books));
+    });
   });
-}
-
-function removeBook(e) {
-  const item = e.target.parentElement;
-  item.remove();
-  books.splice(item, 1);
-  localStorage.setItem("books", JSON.stringify(books));
 }
 
 window.addEventListener("load", getBooks);
@@ -170,3 +171,4 @@ form.addEventListener("submit", (e, i) => {
   e.preventDefault();
   addBook(i);
 });
+
