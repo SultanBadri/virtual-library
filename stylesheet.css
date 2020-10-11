@@ -1,8 +1,8 @@
 :root {
-  --red: #17b978;
-  --darkblue: #071a52;
-  --violet: #086972;
-  --lightblue: #a7ff83;
+  --white: #f3f3f3;
+  --blue: #2185d5;
+  --dark1: #303841;
+  --dark2: #3a4750;
 }
 
 *,
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background: var(--violet);
+  background: var(--dark1);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -34,11 +34,11 @@ header {
   min-height: 8vh;
   top: 0%;
   width: 100%;
-  background: var(--darkblue);
+  background: var(--blue);
 }
 
 header h2 {
-  color: var(--red);
+  color: var(--white);
   letter-spacing: 2px;
 }
 
@@ -50,8 +50,8 @@ header h2 {
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  color: var(--red);
-  background: var(--darkblue);
+  color: var(--white);
+  background: var(--blue);
   transition: 0.5s ease;
   position: absolute;
   bottom: 5%;
@@ -71,9 +71,9 @@ header h2 {
 }
 
 #container h1 {
-  color: var(--red);
+  color: var(--white);
   text-align: center;
-  background: var(--darkblue);
+  background: var(--blue);
   padding: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -104,11 +104,11 @@ select {
   font-size: 1rem;
   outline: 0;
   font-size: 1.4rem;
-  color: var(--red);
+  color: var(--white);
 }
 
 #container input[type="submit"] {
-  background: var(--darkblue);
+  background: var(--blue);
 }
 
 #container .close {
@@ -118,7 +118,7 @@ select {
   right: 10px;
   transform: rotate(45deg);
   cursor: pointer;
-  color: var(--red);
+  color: var(--white);
 }
 
 #container .close:hover {
@@ -166,8 +166,8 @@ select {
 }
 
 .book h2 {
-  background: var(--darkblue);
-  color: var(--red);
+  background: var(--blue);
+  color: var(--white);
   padding: 0.5rem 0;
   margin: -0.5rem 0;
   border-top-left-radius: 5px;
@@ -194,15 +194,15 @@ select {
 }
 
 .book .update {
-  background: var(--red);
-  color: var(--darkblue);
+  background: rgb(223, 223, 223);
+  color: var(--blue);
   position: relative;
   top: 40px;
 }
 
 .book .trash {
-  background: var(--darkblue);
-  color: var(--red);
+  background: var(--blue);
+  color: var(--white);
   position: relative;
   top: 40px;
   border-bottom-left-radius: 5px;
