@@ -1,7 +1,7 @@
 :root {
   --white: #f3f3f3;
   --blue: #2185d5;
-  --dark1: #303841;
+  --dark1: #2d3a47;
   --dark2: #3a4750;
 }
 
@@ -65,7 +65,7 @@ header h2 {
   margin-top: 2rem;
   box-shadow: 5px 5px 35px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  width: 400px;
+  width: 380px;
   z-index: 10000;
   background: #fff;
 }
@@ -194,7 +194,7 @@ select {
 }
 
 .book .update {
-  background: rgb(223, 223, 223);
+  background: rgb(22, 241, 157);
   color: var(--blue);
   position: relative;
   top: 40px;
@@ -207,4 +207,33 @@ select {
   top: 40px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 360px) {
+  #popup #container {
+    width: 260px;
+    padding-top: 10px;
+  }
+
+  #container h1 {
+    font-size: 32px;
+  }
+
+  #container .close {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #container {
+    width: 320px;
+  }
+
+  #container h1 {
+    font-size: 36px;
+  }
+
+  #container .close {
+    font-size: 32px;
+  }
 }
