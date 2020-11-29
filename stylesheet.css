@@ -38,6 +38,7 @@ header {
 }
 
 header h2 {
+  font-size: 1.6rem;
   color: var(--white);
   letter-spacing: 2px;
 }
@@ -53,7 +54,7 @@ header h2 {
   color: var(--white);
   background: var(--blue);
   transition: 0.5s ease;
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   right: 5%;
 }
@@ -147,13 +148,14 @@ select {
   position: absolute;
   top: 12%;
   left: 15%;
+  margin: 2rem;
 }
 
 .book {
   width: 250px;
   height: 300px;
   border-radius: 5px;
-  margin: 1rem;
+  margin: 2rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
