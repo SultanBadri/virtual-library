@@ -1,4 +1,4 @@
-# Library
+# Virtual Library
 A virtual library program that I made from The Odin Project. 
 
 Live Demo: https://sultanbadri.github.io/virtual-library/
