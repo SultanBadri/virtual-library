@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
   --white: #f3f3f3;
   --blue: #2185d5;
@@ -13,7 +15,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -196,7 +198,7 @@ select {
 }
 
 .book .update {
-  background: rgb(22, 241, 157);
+  background: rgb(35, 255, 171);
   color: var(--blue);
   position: relative;
   top: 40px;

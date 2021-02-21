@@ -1,5 +1,8 @@
 "use strict";
 
+let firestore = firebase.firestore();
+const docRef = firestore.collection("books");
+
 const formContainer = document.querySelector("#container");
 const form = document.querySelector("#form");
 const newBook = document.querySelector("#new-book");
@@ -172,3 +175,21 @@ form.addEventListener("submit", (e, i) => {
   e.preventDefault();
   addBook(i);
 });
+
+// docRef.doc(`${newBook.title}`).set({
+//   title: newBook.title,
+//   author: newBook.author,
+//   pages: newBook.pages,
+//   read: newBook.read
+// }).then(function(docRef) {
+//     console.log("Document successfully written!");
+// })
+// .catch(function(error) {
+//     console.error("Error adding document: ", error);
+// });
+
+// docRef.doc(`${book.title}`).update({
+//   read: item.read
+// });
+
+// docRef.doc(`${book.title}`).delete();
