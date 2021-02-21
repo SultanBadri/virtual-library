@@ -1,3 +1,5 @@
+"use strict";
+
 const formContainer = document.querySelector("#container");
 const form = document.querySelector("#form");
 const newBook = document.querySelector("#new-book");
@@ -7,14 +9,13 @@ const bookshelf = document.querySelector(".bookshelf");
 let books = JSON.parse(localStorage.getItem("books")) || [];
 let formOpen = false;
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`;
-  };
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function formOpenOrClosed() {
@@ -32,7 +33,7 @@ function formOpenOrClosed() {
   }
 }
 
-//close modal
+// close modal
 function closeModal() {
   formContainer.style.transform = "scale(0)";
   overlay.style.opacity = 0;
@@ -83,7 +84,7 @@ function addBook(i) {
   formOpenOrClosed();
   form.reset();
 
-  //Update book status
+  // update book status
   updateNode.addEventListener("click", () => {
     if (readNode.innerHTML === "Read the book? No😢") {
       readNode.innerHTML = "Read the book? Yes😃";
@@ -95,7 +96,7 @@ function addBook(i) {
       localStorage.setItem("books", JSON.stringify(books));
     }
   });
-  //delete book
+  // delete book
   trashNode.addEventListener("click", () => {
     bookshelf.removeChild(bookNode);
     books.splice(bookNode, 1);
@@ -143,7 +144,7 @@ function getBooks() {
     bookNode.appendChild(trashNode);
     bookshelf.appendChild(bookNode);
 
-    //Update book status
+    // update book status
     updateNode.addEventListener("click", () => {
       if (readNode.innerHTML === "Read the book? No😢") {
         readNode.innerHTML = "Read the book? Yes😃";
@@ -155,7 +156,7 @@ function getBooks() {
         localStorage.setItem("books", JSON.stringify(books));
       }
     });
-    //delete book
+    // delete book
     trashNode.addEventListener("click", () => {
       bookshelf.removeChild(bookNode);
       books.splice(bookNode, 1);
@@ -171,4 +172,3 @@ form.addEventListener("submit", (e, i) => {
   e.preventDefault();
   addBook(i);
 });
-
