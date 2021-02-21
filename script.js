@@ -1,8 +1,5 @@
 "use strict";
 
-let firestore = firebase.firestore();
-const docRef = firestore.collection("books");
-
 const formContainer = document.querySelector("#container");
 const form = document.querySelector("#form");
 const newBook = document.querySelector("#new-book");
@@ -64,7 +61,7 @@ function addBook(i) {
 
   const read = document.getElementById("read").value;
   let readNode = document.createElement("h3");
-  readNode.innerHTML = `Read the book? ${read}${read === "Yes" ? "😃" : "😢"}`;
+  readNode.innerHTML = `Read? ${read}${read === "Yes" ? "😃" : "😢"}`;
 
   let updateNode = document.createElement("button");
   updateNode.classList = "update";
@@ -89,12 +86,12 @@ function addBook(i) {
 
   // update book status
   updateNode.addEventListener("click", () => {
-    if (readNode.innerHTML === "Read the book? No😢") {
-      readNode.innerHTML = "Read the book? Yes😃";
+    if (readNode.innerHTML === "Read? No😢") {
+      readNode.innerHTML = "Read? Yes😃";
       book.read = "Yes";
       localStorage.setItem("books", JSON.stringify(books));
     } else {
-      readNode.innerHTML = "Read the book? No😢";
+      readNode.innerHTML = "Read? No😢";
       book.read = "No";
       localStorage.setItem("books", JSON.stringify(books));
     }
@@ -127,7 +124,7 @@ function getBooks() {
 
     const read = document.getElementById("read").value;
     let readNode = document.createElement("h3");
-    readNode.innerHTML = `Read the book? ${book.read}${
+    readNode.innerHTML = `Read? ${book.read}${
       book.read === "Yes" ? "😃" : "😢"
     }`;
 
@@ -149,12 +146,12 @@ function getBooks() {
 
     // update book status
     updateNode.addEventListener("click", () => {
-      if (readNode.innerHTML === "Read the book? No😢") {
-        readNode.innerHTML = "Read the book? Yes😃";
+      if (readNode.innerHTML === "Read? No😢") {
+        readNode.innerHTML = "Read? Yes😃";
         book.read = "Yes";
         localStorage.setItem("books", JSON.stringify(books));
       } else {
-        readNode.innerHTML = "Read the book? No😢";
+        readNode.innerHTML = "Read? No😢";
         book.read = "No";
         localStorage.setItem("books", JSON.stringify(books));
       }
@@ -175,21 +172,3 @@ form.addEventListener("submit", (e, i) => {
   e.preventDefault();
   addBook(i);
 });
-
-// docRef.doc(`${newBook.title}`).set({
-//   title: newBook.title,
-//   author: newBook.author,
-//   pages: newBook.pages,
-//   read: newBook.read
-// }).then(function(docRef) {
-//     console.log("Document successfully written!");
-// })
-// .catch(function(error) {
-//     console.error("Error adding document: ", error);
-// });
-
-// docRef.doc(`${book.title}`).update({
-//   read: item.read
-// });
-
-// docRef.doc(`${book.title}`).delete();

@@ -3,7 +3,7 @@
 :root {
   --white: #f3f3f3;
   --blue: #2185d5;
-  --dark1: #2d3a47;
+  --dark1: #2d4059;
   --dark2: #3a4750;
 }
 
@@ -74,13 +74,13 @@ header h2 {
 }
 
 #container h1 {
-  color: var(--white);
+  color: var(--blue);
   text-align: center;
-  background: var(--blue);
+  background: white;
   padding: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  margin: -1rem -1rem 2rem -1rem;
+  margin: -1rem -1rem 1rem -1rem;
   font-size: 3rem;
   font-weight: 100;
 }
@@ -121,11 +121,11 @@ select {
   right: 10px;
   transform: rotate(45deg);
   cursor: pointer;
-  color: var(--white);
+  color: var(--blue);
 }
 
 #container .close:hover {
-  color: #fff;
+  color: rgb(36, 113, 177);
   transition: 0.3s ease;
 }
 
